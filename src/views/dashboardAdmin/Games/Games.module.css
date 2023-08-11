@@ -1,0 +1,256 @@
+.users-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: rgb(128, 124, 124);
+  margin-top: -580px;
+  margin-left: 170px;
+}
+.tableContainer {
+  background-color: #f0eaea;
+  border-radius: 10px;
+  padding: 20px; /* Puedes ajustar el valor del padding según tus preferencias */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Agrega sombra para realzar el efecto del recuadro */
+  /* Asegúrate de que la propiedad de tamaño se ajuste automáticamente al contenido */
+  display: inline-block;
+  width: 896px;
+}
+/* Estilos de la tabla */
+.userTable {
+display: flex;
+flex-direction: column;
+background-color: #f0eaea;
+}
+.tableTable{
+background-color: #f0eaea;
+height: 450px;
+width: 896px;
+}
+.title{
+padding-right: 36%;
+color: black;
+font-weight: bold;
+font-size: 25px;
+}
+.bar {
+display: flex;
+flex-direction: column;
+background-color:#f0eaea;
+height: 60px;
+}
+.SearchBar {
+display: flex;
+/* flex-direction: column; */
+background-color:#f0eaea;
+height: 30px;
+margin-left: -12px;
+}
+/* Estilos de las filas */
+.userRow {
+display: flex;
+width: 170%;
+height: -70%;
+}
+/* Estilos de las celdas */
+/* .userCell {
+display: table-cell;
+padding: 8px;
+border: 1px solid #ccc;
+} */
+/* Estilos de los encabezados de columna */
+.userHeader {
+display: table-cell;
+/* padding: 8px; */
+font-weight: bold;
+border: 1px solid #ccc;
+}
+
+.userImage {
+width: 30px;
+height: 30px;
+border-radius: 100px;
+}
+
+.userHeaderColumn1,
+.userHeaderColumn2,
+.userHeaderColumn3,
+.userHeaderColumn4,
+.userHeaderColumn5,
+.userHeaderColumn6{
+border-top: 3px solid #ccc;
+font-weight: bold;
+color: black;
+}
+
+.userHeaderColumn1,
+.userColumn1 {
+/* flex: 1; */
+width: 30px;
+/* vertical-align: middle; */
+height: 30px;
+padding: 8px; 
+
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+}
+
+.userHeaderColumn2,
+.userColumn2 {
+/* flex: 1; */
+width: 150px;
+/* vertical-align: middle; */
+height: 30px;
+padding: 8px; 
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+}
+
+.userHeaderColumn3,
+.userColumn3 {
+/* flex: 1; */
+width: 350px;
+/* vertical-align: middle; */
+height: 30px;
+padding: 8px; 
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+}
+
+.userHeaderColumn4,
+.userColumn4 {
+/* flex: 1; */
+width: 90px;
+/* vertical-align: middle; */
+height: 30px;
+
+padding: 8px; 
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+}
+
+.userHeaderColumn5,
+.userColumn5 {
+/* flex: 1; */
+width: 80px;
+/* vertical-align: middle; */
+height: 30px;
+
+padding: 8px; 
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+}
+
+.userHeaderColumn6,
+.userColumn6 {
+/* flex: 1; */
+width: 100px;
+padding: 8px; /* Add padding for better readability */
+/* border-top: 1px solid #ccc; */
+border-bottom: 1px solid #ccc;
+height: 30px;
+}
+
+.NoFundMessage{
+margin: 40px;
+font-size: 25px;
+}
+
+.pagination{
+  padding-top: 12%;
+  /* padding-left: 36%;
+  padding-right: 36%; */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.pagination button {
+  margin: 0 1px; /* Esto agrega 5px de margen horizontal entre los botones */
+  background-color: #622EDA;
+  border-color: #622EDA;
+  font-weight: bold;
+  }
+
+.btnPaged{
+font-size: 20px;
+
+}
+
+.searchInput{
+width: 130px;
+height: 40px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+background-image: url('/src/assets/search-icon-png.png');
+
+background-position: 10px 10px; 
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+transition: width 0.4s ease-in-out;
+}
+
+.searchInput:focus {
+width: 100%;
+}
+.menuContainer {
+  position: absolute;
+  top: 94px;
+  right: 650px;
+  background-color: transparent; /* Cambiar el fondo a transparente */
+  padding: 5px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+.menuContainer2 {
+  position: absolute;
+  top: 94px;
+  right: 650px;
+  background-color: transparent; /* Cambiar el fondo a transparente */
+  padding: 5px;
+  margin-right: -170px;
+  margin-top: 10px;
+}
+.menuContainer2 button {
+  background-color: #622EDA; /* Agregar un fondo gris claro a los botones */
+  border: none; /* Quitar el borde de los botones */
+  border-radius: 5px; /* Ajustar el radio del borde */
+  padding: 10px; /* Ajustar el espacio interno del botón */
+  margin-right: 5px; /* Ajustar el margen derecho entre los botones */
+  color: white; /* Cambiar el color del texto a blanco */
+  font-weight: bold; /* Hacer el texto en negrita */
+}
+.menuContainer button {
+  background-color: #622EDA; /* Agregar un fondo gris claro a los botones */
+  border: none; /* Quitar el borde de los botones */
+  border-radius: 5px; /* Ajustar el radio del borde */
+  padding: 10px; /* Ajustar el espacio interno del botón */
+  margin-right: 5px; /* Ajustar el margen derecho entre los botones */
+  color: white; /* Cambiar el color del texto a blanco */
+  font-weight: bold; /* Hacer el texto en negrita */
+}
+
+.filters {
+  /* Agrega margen derecho a los elementos Filter y Update list */
+  margin-right: 100px;
+}
+
+.selectedRow {
+color: #622EDA; /* Cambiar el color del texto a azul para la fila seleccionada */
+font-weight: bold; /* Hacer el texto en negrita */
+text-decoration: underline; /* Subrayar el texto */
+}
+.updateListButton {
+  background-color: #987bdc;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Ajustar el radio del borde */
+  margin-left: 5px;
+  margin-right: 5px;
+}

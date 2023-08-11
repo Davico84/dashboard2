@@ -1,0 +1,198 @@
+.Container {
+  background-color: #f0eaea;
+  width: 70%;
+  min-height: 40.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  margin-top: -580px;
+  margin-left: 370px;
+}
+.NoFundMessage{
+  margin: 40px;
+  font-size: 25px;
+  }
+.title1{
+  padding-right: 36% !important;
+color: black !important;
+font-weight: bold !important;
+font-size: 25px !important;
+}
+
+.Container h1 {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+
+}
+.userImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+.FirstSection {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  justify-content: space-between;
+}
+.SecondSection {
+  width: 98%;
+  display: flex;
+  justify-content: space-around;
+}
+.SecondSection section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(128, 124, 124);
+  width: 100%;
+  border-top: 2px solid rgb(128, 124, 124);
+}
+.SecondSection section article {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 30px;
+  color: rgb(128, 124, 124);
+  border-bottom: 1px solid rgb(128, 124, 124);
+}
+
+.pagination {
+  padding-top: 1%;
+  /* padding-left: 36%;
+      padding-right: 36%; */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.pagination button {
+  margin: 0 10px; /* Esto agrega 5px de margen horizontal entre los botones */
+  background-color: #622EDA;
+  border-color: #622EDA;
+  font-weight: bold
+}
+.btnPaged {
+  font-size: 20px;
+}
+
+.searchInput {
+  width: 130px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("/src/assets/search-icon-png.png");
+
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchInput:focus {
+  width: 100%;
+}
+
+/* Estilos para el modal */
+.modalContainer {
+  /* Estilos para el contenedor del modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  /* Estilos para el contenido del modal */
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  width: 50%;
+  height: 50%;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalTitle {
+  /* Estilos para el título del modal */
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.crossIconAllow {
+  color: #00d37b;
+  margin-right: 5px;
+}
+.gameItemContainer {
+  /* Estilos para cada item de venta en el modal */
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+}
+
+.gameItemImage {
+  /* Estilos para la imagen del item de venta */
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.gameItemName {
+  /* Estilos para el nombre del item de venta */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gameItemQuantity,
+.gameItemPrice {
+  /* Estilos para la cantidad y precio del item de venta */
+  font-size: 16px;
+  color: #666;
+}
+
+.divider {
+  /* Estilos para la línea divisoria */
+  height: 2px;
+  background-color: #ccc;
+  margin: 16px 0;
+}
+
+.leftAlignedContainer {
+  /* Estilos para el contenedor de detalles adicionales alineados a la izquierda */
+  text-align: left;
+}
+
+.orderNumber,
+.NameDetails,
+.saleValue {
+  /* Estilos para los detalles adicionales de la venta */
+  font-size: 16px;
+  color: #666;
+}
+
+.closeButton {
+  /* Estilos para el botón de cerrar */
+  background-color: #622eda;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,103 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90vh;
+  width: 40vh;
+  padding: 16px;
+  background-color: #987bdc;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Estilos para el título "GameStack" */
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Estilos para la lista */
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Estilos para cada elemento de la lista */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+  transform: translateX(-8px);
+}
+
+/* Estilos para los enlaces de la lista */
+li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+  width: 100%;
+  transition: color 0.2s ease-in-out;
+}
+
+li:hover a {
+  color: #1b063e;
+}
+
+/* Estilos para los iconos */
+li svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  fill: white; /* Agregamos esto para asegurarnos de que el color del icono sea blanco por defecto */
+  transition: fill 0.2s ease-in-out;
+}
+
+li:hover svg {
+  fill: #1b063e;
+}
+
+/* Estilos para el botón "Close session" */
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid white;
+  margin: 16px 0;
+}
+
+/* Estilos para el enlace "Close session" */
+.menu-container a:last-child {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Estilos para el ícono y texto "Close session" */
+.menu-container .close-session {
+  color: #1b063e;
+  font-weight: bold;
+  margin-top: -2px; /* Ajusta el margen superior para alinear el ícono con el texto */
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+}
+
+/* Estilos para el ícono */
+.menu-container .icon {
+  margin-top: -2px; /* Ajusta el margen superior para alinear el ícono con el texto */
+}

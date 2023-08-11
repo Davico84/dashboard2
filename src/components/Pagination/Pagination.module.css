@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .horizontalList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .pageNavigation {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pageNavigation button {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .card {
+    width: 100%;
+    height: 15px;
+    background-color: #f0f0f0;
+    margin-bottom: 5px;
+  }
+  

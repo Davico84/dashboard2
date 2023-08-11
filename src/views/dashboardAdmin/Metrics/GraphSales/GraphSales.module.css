@@ -1,0 +1,104 @@
+.myContainer {
+  width: 100%;
+  display: flex; /* Activa el modelo de caja flexible */
+  flex-direction: column; /* Cambia la dirección del eje principal a vertical */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  overflow-x: auto;
+}
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+   margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width:90%;
+}
+.inputs_Filtro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  /* margin: 0 auto; */
+  margin-top: 10px;
+  background-color: #6B35E8;
+  padding: 10px;
+  height: 50px;
+  border-radius: 8px;
+  height: 35px;
+}
+
+.input {
+  margin: 0 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* TuArchivo.module.css */
+
+.myButton {
+  background-color: #280657;
+  color: white;
+  margin-bottom: 13px; 
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  /* Agregado */
+  justify-content: center;
+  /* Centrado horizontal */
+  align-items: center;
+  /* Centrado vertical */
+  text-align: center;
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+.clearButton {
+  background-color: #E94E4E;
+  color: "white";
+  /* margin-bottom: 13px; */
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  /* Agregado */
+  justify-content: center;
+  /* Centrado horizontal */
+  align-items: center;
+  /* Centrado vertical */
+  text-align: center;
+}
+
+
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+.loadingContainer img {
+  width: 250px; /* Ajusta el ancho de la imagen según tus necesidades */
+  border-radius: 10px;
+}

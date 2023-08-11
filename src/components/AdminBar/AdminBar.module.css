@@ -1,0 +1,44 @@
+.adminBar {
+  position: absolute; /* Cambiamos a position: sticky */
+  top: 16px;
+  left: 0;
+  width: 68.5%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #622EDA;
+  font-weight: bold;
+  padding: 0 20px;
+  box-sizing: border-box;
+  transform: translateX(41%);
+  border-radius: 4px;
+}
+
+.greeting {
+  font-size: 20px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userIcon {
+  font-size: 24px;
+  color: white;
+  margin-right: 5px;
+}
+
+.userName {
+  font-size: 20px;
+}
+
+.image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100rem;
+  margin-left: 1rem;
+  object-fit: cover
+}

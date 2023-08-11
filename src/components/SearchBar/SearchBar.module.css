@@ -1,0 +1,33 @@
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1.5px solid #987bdc;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .searchInput {
+    flex: 1; /* Hacemos que el input ocupe el espacio restante en el contenedor */
+    border: none;
+    outline: none;
+    padding: 5px; /* Aumentamos el padding para agrandar el input */
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: transparent;
+    color: #987bdc; /* Cambiamos el color del texto del input a #987bdc */
+    text-align: left; /* Alineamos el texto a la derecha */
+  }
+  
+  .searchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+  }
+  
+  .searchIcon {
+    font-size: 20px;
+    color: #987bdc;
+  }

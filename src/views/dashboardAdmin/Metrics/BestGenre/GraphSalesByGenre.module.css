@@ -1,0 +1,57 @@
+.myContainer {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+.chartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    /* padding: 20px; */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:90%;
+    /* height: 80%; */
+
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+}
+.genreCheckboxes {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px; 
+  margin-top: 10px; 
+  /* background-color: aqua; */
+  border-width: 5px "black";
+}
+
+.genreCheckboxes label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  /* background-color: blueviolet; */
+  height: 30px;
+  width: 80px;
+}
+
+
+.genreCheckboxes input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+.loadingContainer img {
+  width: 250px; /* Ajusta el ancho de la imagen según tus necesidades */
+  border-radius: 10px;
+}

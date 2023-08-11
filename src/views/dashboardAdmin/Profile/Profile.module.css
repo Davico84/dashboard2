@@ -1,0 +1,145 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100%;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: white;
+  margin-top: -570px;
+  margin-left: 50%; /* Ajusta la cantidad de margen izquierdo para desplazar el componente hacia la derecha */
+  transform: translateX(-32%);
+  background: linear-gradient(to right, #1B063E, #622EDA);
+  border: 1px solid #622EDA;
+  border-radius: 10px;
+   /* Centra el componente horizontalmente después de aplicar el margen izquierdo */
+  /* border: solid 1px white; */
+  }
+
+  .loading-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100%;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  margin-top: -300px;
+  margin-left: 50%; /* Ajusta la cantidad de margen izquierdo para desplazar el componente hacia la derecha */
+  transform: translateX(-32%);
+
+   /* Centra el componente horizontalmente después de aplicar el margen izquierdo */
+  /* border: solid 1px white; */
+  }
+
+  .imageContainer{
+    align-items: center;
+    margin-left: auto;
+    width: 40%;
+  }
+  
+  .imageLoaded{
+  
+    margin-top: auto;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover
+    
+  }
+
+  /* Estilos para el formulario */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  ;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-left: auto;
+  width: 60%;
+}
+
+.allinputsContainer{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.inputContainer {
+  position: relative;
+  width: 25rem;
+  height: 100%;
+}
+.inputWithIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/* Estilos para los campos de entrada (inputs) */
+
+.input{
+  width: 100%;
+  padding: 5px;
+  text-align:start;
+  margin-bottom: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding-left: 30px;
+  color: #622EDA;
+}
+
+.miniButton{
+  padding: 10px;
+  margin: 32;
+  height: 42;
+  width: 100%;
+  background-color: #6B35E8;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.miniButton:hover {
+  background-color: #0056b3;
+}
+
+.error{
+  text-align: center;
+  font-size: 14;
+  color: #ff193b;
+  font-weight: bold;
+}
+.buttonText{
+  text-align: center;
+  padding: 10;
+  font-size: 16;
+  font-weight: bold;
+  color: #FAFAFA;
+}
+
+
+.editIcon { 
+  margin-left: -30px; /* Alinea el ícono a la izquierda del campo de entrada */
+  margin-right: 5px; /* Añade margen derecho para separar el ícono del texto */
+  color: #3F16A7;
+  cursor: pointer;
+}
+
+.crossIcon{
+  color: #595959;
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  
+  cursor: pointer;
+}
+
+.inputContainer{
+  display: flex;
+  flex-direction: row;
+  
+}
