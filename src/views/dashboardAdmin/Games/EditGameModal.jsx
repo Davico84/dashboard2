@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateVideoGame } from "../../../redux/videogamesActions"; // Asegúrate de importar correctamente el archivo donde se define la acción
+import showAlert from "../../../components/Helpers/SwetAlert/SwetAlert1Confirmation";
 
 import styles from "./EditGameModal.module.css"; // Estilos para el modal
 
@@ -173,8 +174,17 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
       <div className={styles.modalContent}>
         <h3>Edit Game</h3>
         <form>
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
+        <div className={styles.formGroup}>
+  {editedGame.image && (
+    <img
+      src={editedGame.image}
+      alt={`Image for ${editedGame.name}`}
+      className={styles.gameImage}
+    />
+  )}
+</div>
+          <div>
+            <div className={styles.inputleft}>
               <label>Name:</label>
               <input
                 type="text"
@@ -183,7 +193,7 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
                 onChange={handleChange}
               />
             </div>
-            <div className={styles.formGroup}>
+            <div className={styles.inputleft}>
               <label>Price:</label>
               <input
                 type="number"
@@ -193,7 +203,7 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
               />{" "}
               {/* Cambia "Price" a "price" aquí */}
             </div>
-            <div className={styles.formGroup}>
+            <div className={styles.inputleft}>
               <label>Stock:</label>
               <input
                 type="number"
@@ -202,9 +212,7 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
                 onChange={handleChange}
               />
             </div>
-          </div>
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
+            <div className={styles.inputleft}>
               <label>Release Date:</label>
               {/* Utiliza el estado local formateado para el input de tipo date */}
               <input
@@ -214,79 +222,89 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
                 onChange={handleChange}
               />
             </div>
-            
-          </div>
 
-          <div className={styles.formRow}>
-          <div className={styles.formGroup}>
-              <label>Platforms:</label>
-              <select name="platforms" onChange={handlePlatformChange} multiple>
-                {selectedPlatforms.map((platform) => (
-                  <option key={platform} value={platform}>
-                    {platform}
-                  </option>
-                ))}
-              </select>
-              <select
-                value={newPlatform}
-                onChange={(e) => setNewPlatform(e.target.value)}
-              >
-                <option value="">Select Platform</option>
-                {platforms.map((platform) => (
-                  <option key={platform} value={platform}>
-                    {platform}
-                  </option>
-                ))}
-              </select>
-              <button type="button" onClick={handleAddPlatform}>
-                Add Platform
-              </button>
-              {/* Modifica el botón para que llame a la función handleRemovePlatform con el elemento seleccionado */}
-              <button
-                type="button"
-                onClick={() => {
-                  handleRemovePlatform();
-                }}
-              >
-                Remove Platform
-              </button>
-            </div>
-            <div className={styles.formGroup}>
-              <label>Genre:</label>
-              <select name="genre" onChange={handleGenreChange} multiple>
-                {selectedGenres.map((genre) => (
-                  <option key={genre} value={genre}>
-                    {genre}
-                  </option>
-                ))}
-              </select>
-              <select
-                value={newGenre}
-                onChange={(e) => setNewGenre(e.target.value)}
-              >
-                <option value="">Select Genre</option>
-                {genres.map((genre) => (
-                  <option key={genre} value={genre}>
-                    {genre}
-                  </option>
-                ))}
-              </select>
-              <button type="button" onClick={handleAddGenre}>
-                Add Genre
-              </button>
-              {/* Modifica el botón para que llame a la función handleRemoveGenre con el elemento seleccionado */}
-              <button
-                type="button"
-                onClick={() => {
-                  handleRemoveGenre();
-                }}
-              >
-                Remove Genre
-              </button>
-            </div>
           </div>
-          <div className={styles.formGroup}>
-            <label>Description:</label>
+       
+            
+            
+       
+
+          <div className={styles.right}>
+          <div className={`${styles.row} ${styles.platform}`}>
+    <div>
+      <label className={styles.titulop}>Platforms:</label>
+      <select className={`${styles.selectField}`} name="platforms" onChange={handlePlatformChange} multiple>
+        {selectedPlatforms.map((platform) => (
+          <option key={platform} value={platform}>
+            {platform}
+          </option>
+        ))}
+      </select>
+      <select className={styles.option}
+        value={newPlatform}
+        onChange={(e) => setNewPlatform(e.target.value)}
+      >
+        <option value="">Select Platform</option>
+        {platforms.map((platform) => (
+          <option key={platform} value={platform}>
+            {platform}
+          </option>
+        ))}
+      </select>
+      <div className={styles.patgenbot}>
+
+      
+      <button type="button" onClick={handleAddPlatform}>
+        Add Platform
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          handleRemovePlatform();
+        }}
+      >
+        Remove Platform
+      </button>
+      </div>
+    </div>
+    <div>
+      <label className={styles.titulog}>Genre:</label>
+      <select className={`${styles.selectField}`} name="genre" onChange={handleGenreChange} multiple>
+        {selectedGenres.map((genre) => (
+          <option key={genre} value={genre}>
+            {genre}
+          </option>
+        ))}
+      </select>
+      <select className={styles.option}
+        value={newGenre}
+        onChange={(e) => setNewGenre(e.target.value)}
+      >
+        <option  value="">Select Genre</option>
+        {genres.map((genre) => (
+          <option key={genre} value={genre}>
+            {genre}
+          </option>
+        ))}
+      </select>
+      <div className={styles.patgenbot}>
+      <button type="button" onClick={handleAddGenre}>
+        Add Genre
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          handleRemoveGenre();
+        }}
+      >
+        Remove Genre
+      </button>
+    </div>
+    </div>
+    
+  </div>
+            <div className={styles.descrip}>
+            <label className={styles.titulod}>Description:</label>
             <textarea
               name="description"
               value={description}
@@ -295,31 +313,41 @@ function EditGameModal({ selectedGame, onClose, onSave }) {
               cols={50}
             />
           </div>
+          </div>
+          
         </form>
         {showSuccessMessage && (
-          <div className={styles.successMessage}>
-            Successful Edition
-          </div>
+          showAlert(
+            "Data Update!",
+            "Your information has been updated",
+            'routeIcons.confirm',
+            "Ok",
+            )
         )}
+        <div >
         <div className={styles.modalButtons}>
-          <div>
             <button
               className={
                 editedGame.deleted
-                  ? styles.deletedButton
-                  : styles.availableButton
+                  ? styles.availableButton
+                  : styles.deletedButton
               }
               onClick={handleDeleteToggle}
             >
-              {editedGame.deleted ? "Available" : "Deleted"}
+              {editedGame.deleted ? "Deleted" : "Available"}
             </button>
-          </div>
-          <div>
+        
+          
+
+          <div className={styles.modalButtonsr}>
             <button onClick={handleSave}>Save</button>
           </div>
-          <div>
+          <div className={styles.modalButtonsl}>
             <button onClick={handleCancel}>Cancel</button>
           </div>
+
+          </div>
+
         </div>
       </div>
     </div>

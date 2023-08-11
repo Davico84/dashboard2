@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import styles from "./GraphBestSeller.module.css";
 import loadingImage from "../../../../assets/countDownd.gif";
+import Loading2 from "../../../../components/Helpers/Loading2";
 
 const TopGamesChart = ({ data }) => {
   const [initialFilteredData, setInitialFilteredData] = useState([]);
@@ -132,7 +133,7 @@ const TopGamesChart = ({ data }) => {
       </div>
       {isLoading ? (
         <div className={styles.loadingContainer}>
-          <img src={loadingImage} alt="Loading..." />
+                   <Loading2/>
         </div>
       ) : (
         <div className={styles.chartContainer}>

@@ -7,6 +7,7 @@ import {
 } from "recharts";
 import styles from "./GraphSalesByGenre.module.css";
 import loadingImage from "../../../../assets/countDownd.gif"
+import Loading2 from "../../../../components/Helpers/Loading2";
 const SalesByGenreChart = ({ dataSales, dataVGames }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -89,7 +90,7 @@ const SalesByGenreChart = ({ dataSales, dataVGames }) => {
     <div className={styles.myContainer}>
        {isLoading ? (
         <div className={styles.loadingContainer}>
-          <img src={loadingImage} alt="Loading..." />
+          <Loading2/>
         </div>
       ) : (
       <div className={styles.chartContainer}>

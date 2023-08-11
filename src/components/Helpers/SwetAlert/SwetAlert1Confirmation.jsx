@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import styles from './SwetAlert.modules.css';
+import styles from './SwetAlert.modules.css?inline';
 
 const showAlert = (title, text, icon , confirmButtonText,action1) => {
   Swal.fire({

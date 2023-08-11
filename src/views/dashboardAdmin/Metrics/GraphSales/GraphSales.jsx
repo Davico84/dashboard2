@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import styles from "./GraphSales.module.css";
 import loadingImage from "../../../../assets/countDownd.gif";
+import Loading2 from "../../../../components/Helpers/Loading2";
 
 const SalesByDateChart = ({ data }) => {
   const [initialFilteredData, setInitialFilteredData] = useState([]);
@@ -135,7 +136,7 @@ const SalesByDateChart = ({ data }) => {
       </div>
       {isLoading ? (
         <div className={styles.loadingContainer}>
-          <img src={loadingImage} alt="Loading..." />
+          <Loading2/>
         </div>
       ) : (
         <div className={styles.chartContainer}>
