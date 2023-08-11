@@ -5,6 +5,10 @@ import SubmitGame from "../../../components/UtilsCreateGame/Submit";
 import styles from "./LoadVIdeogame.module.css";
 import axios from "axios";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { validate } from "../../../components/UtilsCreateGame/CreateGameValidate";
 
 import {
@@ -140,6 +144,16 @@ const LoadVideogame = () => {
     }
   };
 
+  /////////////////////////////////
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3, // Cantidad de imágenes visibles a la vez
+    slidesToScroll: 1,
+  };
+
   ///////////////////////////
 
   const handleTextChange = (text) => {
@@ -239,280 +253,290 @@ const LoadVideogame = () => {
   };
 
   return (
-    <form className={styles.container}>
-      <div className={styles.formContainer}>
-        
-        <h1 className={styles.header}>Load Videogame</h1>
-        <div className={styles.subFormContainer}>
-        <div>
-          <h2>Title</h2>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Enter Game name"
-            value={newVideoGame.name}
-            onBlur={() => setInputFocusedName(false)}
-            onChange={(e) => handleInputChange("name", e.target.value)}
-          />
-          {validateNvg.name !== "" && !inputFocusedName && (
-            <div className={styles.errorMessage}>{validateNvg.name}</div>
-          )}
-        </div>
-
-        <div>
-          <h2>Price</h2>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="$999.99"
-            onBlur={() => setInputFocusedPrice(false)}
-            value={newVideoGame.price}
-            onChange={(e) => handleInputChange("price", e.target.value)}
-          />
-          {validateNvg.price !== "" && !inputFocusedPrice && (
-            <div className={styles.errorMessage}>{validateNvg.price}</div>
-          )}
-        </div>
-
-        <div>
-          <h2>Release date</h2>
-          <div>
+    <form>
+      <div className={styles.container}>
+        <div className={styles.loadimagesContainer}>
+          <div className={styles.imageLoad}>
+            <h2>Front page</h2>
             <input
-              type="date"
-              className={styles.datepickerinput}
-              onBlur={() => setInputFocusedDate(false)}
-              value={date}
-              onChange={(e) => handleDateChange(e.target.value)}
-              placeholder="Select a date"
-              max={today}
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              onBlur={() => setInputFocusedImage(false)}
+              style={{ display: "none" }} // Cambia "flex" por "none" para ocultar el input por defecto
+              id="imagePicker"
+              icon={routeIcons.addImage}
             />
-          </div>
-          {validateNvg.releaseDate !== "" && !inputFocusedDate && (
-            <div className={styles.errorMessage}>{validateNvg.releaseDate}</div>
-          )}
-        </div>
-
-        <div className={styles.input}>
-        <h2>Select genre</h2>
-        <div>
-          <select className={styles.inputGenrePlatform} onChange={(e) => pushItemgenre(e.target.value)}>
-            <option value="" disabled selected>
-              Add genre
-            </option>
-            {stackData.genre.map((genre) => (
-              <option key={genre} value={genre}>
-                {genre}
-              </option>
-            ))}
-          </select>
-        </div>
-
-      <div>
-        <select className={styles.inputGenrePlatform} onChange={(e) => removeItemgenre(e.target.value)}>
-          <option value="" disabled selected>
-            Remove genre
-          </option>
-          {newVideoGame.genre.map((genre) => (
-            <option key={genre} value={genre}>
-              {genre}
-            </option>
-          ))}
-        </select>
-      </div>
-      {validateNvg.genre !== "" && !validateSubmit && (
-        <div className={styles.errorMessage}>{validateNvg.genre}</div>
-      )}
-</div>
-<br></br>
-      <div className={styles.input}>
-        <h2>Select platform</h2>
-        <div> 
-          <select className={styles.inputGenrePlatform} onChange={(e) => pushItemplatforms(e.target.value)}>
-            <option value="" disabled selected>
-              Add platforms
-            </option>
-            {stackData.platforms.map((platform) => (
-              <option key={platform} value={platform}>
-                {platform}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <select className={styles.inputGenrePlatform} onChange={(e) => removeItemplatforms(e.target.value)}>
-            <option value="" disabled selected>
-              Remove platforms
-            </option>
-            {newVideoGame.platforms.map((platform) => (
-              <option key={platform} value={platform}>
-                {platform}
-              </option>
-            ))}
-          </select>
-        </div>
-        {validateNvg.platforms !== "" && !validateSubmit && (
-          <div className={styles.errorMessage}>{validateNvg.platforms}</div>
-        )}
-      </div>
-        </div>
-
-        <div className={styles.descrReq}>
-          <div>
-          <h2>Description</h2>
-          <textarea
-            className={styles.textarea}
-            placeholder="Paste_description"
-            onBlur={() => setInputFocusedDesc(false)}
-            value={newVideoGame.description}
-            onChange={(e) => handleTextChange2(e.target.value)}
-          />
-          {validateNvg.description !== "" && !inputFocusedDesc && (
-            <div className={styles.errorMessage}>{validateNvg.description}</div>
-          )}
-        </div>
-
-        <div>
-          <h2>System Requeriments</h2>
-          <textarea
-            className={styles.textarea}
-            placeholder="Paste_requeriments"
-            onBlur={() => setInputFocusedrequeriments_en(false)}
-            value={newVideoGame.requeriments_en}
-            onChange={(e) => handleTextChange(e.target.value)}
-          />
-          {validateNvg.requeriments_en !== "" &&
-            !inputFocusedrequeriments_en && (
-              <div className={styles.errorMessage}>
-                {validateNvg.requeriments_en}
-              </div>
+            {validateNvg.image && !inputFocusedImage && (
+              <div className={styles.errorMessage}>{validateNvg.image}</div>
             )}
-        </div>
-        </div>
+            <label htmlFor="imagePicker">
+              <div>
+                {newVideoGame.image.length > 0 ? (
+                  <img
+                    src={image}
+                    alt="Selected"
+                    className={styles.imageLoaded}
+                  />
+                ) : (
+                  <div>
+                    <text className={styles.uploadImageIco}>
+                      {<routeIcons.addImage />}
+                    </text>
+                  </div>
+                )}
+                <text className={styles.message}>
+                  You can only upload one cover image
+                </text>
+              </div>
+            </label>
+          </div>
+          <div className={styles.imageLoad2}>
+            <h2>Screeshots</h2>
+            <input
+              className={styles.updateImage}
+              type="file"
+              accept="image/*"
+              onBlur={() => setInputFocusedScreenShots(false)}
+              onChange={handleScreenImageChange}
+              id="imagePicker2"
+              multiple
+              style={{ display: "none" }}
+            />
 
-        <div className={styles.imagesLoad}>
-        <div className={styles.imageLoad}>
-          <h2>Front page</h2>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            onBlur={() => setInputFocusedImage(false)}
-            style={{ display: "none" }} // Cambia "flex" por "none" para ocultar el input por defecto
-            id="imagePicker"
-            icon={routeIcons.addImage}
-          />
-          {validateNvg.image && !inputFocusedImage && (
-            <div className={styles.errorMessage}>{validateNvg.image}</div>
-          )}
-          <label htmlFor="imagePicker">
-            <div>
-              {newVideoGame.image.length > 0 ? (
-                <img
-                  src={image}
-                  alt="Selected"
-                  className={styles.imageLoaded}
-                />
-              ) : (
-                <div>
-                  <text className={styles.uploadImage}>
-                    {<routeIcons.addImage />}
-                  </text>
+            <label htmlFor="imagePicker2" className={styles.buttonUpload}>
+              <div className={styles.carouselContainer}>
+                <Slider {...settings}>
+                  {newVideoGame.screenShots.length > 0 ? (
+                    newVideoGame.screenShots.map((imageUrl, index) => (
+                      <div key={index} className={styles["image-container"]}>
+                        <div className={styles["image-wrapper"]}>
+                          <img
+                            src={imageUrl}
+                            alt={`Selected ${index}`}
+                            className={styles.imageLoad}
+                          />
+                          <button
+                            className={styles.deleteImage}
+                            type="button"
+                            onClick={() => deleteScreen(imageUrl)}
+                          >
+                            {<routeIcons.delete />}
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div>
+                      <text className={styles.uploadImageIco}>
+                        {<routeIcons.addImage />}
+                      </text>
+                    </div>
+                  )}
+                </Slider>
+              </div>
+            </label>
+            <div className={styles.message}>
+              {validateNvg.screenShots !== "" && !inputFocusedScreenShots && (
+                <div className={styles.errorMessage}>
+                  {validateNvg.screenShots}
                 </div>
               )}
               <text className={styles.message}>
-                You can only upload one cover image
+                {" "}
+                Hold ctrl to select multiple images
               </text>
             </div>
-          </label>
+          </div>
         </div>
+        <div className={styles.inputs}>
+          <div className={styles.subContenedorInputs}>
+            <h1 className={styles.header}>Load Videogame</h1>
+            <div className={styles.inputsContainer1}>
+              <div className={styles.input1}>
+                <h2>Title</h2>
+                <input
+                  className={styles.inputSmall}
+                  type="text"
+                  placeholder="Enter Game name"
+                  value={newVideoGame.name}
+                  onBlur={() => setInputFocusedName(false)}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                />
+                {validateNvg.name !== "" && !inputFocusedName && (
+                  <div className={styles.errorMessage}>{validateNvg.name}</div>
+                )}
+              </div>
+              <div className={styles.input1}>
+                <h2 className={styles.title}>Price</h2>
+                <input
+                  className={styles.inputSmall}
+                  type="text"
+                  placeholder="$999.99"
+                  onBlur={() => setInputFocusedPrice(false)}
+                  value={newVideoGame.price}
+                  onChange={(e) => handleInputChange("price", e.target.value)}
+                />
+                {validateNvg.price !== "" && !inputFocusedPrice && (
+                  <div className={styles.errorMessage}>{validateNvg.price}</div>
+                )}
+              </div>
 
-        <div className={styles.imageLoad}>
-          <h2>Screeshots</h2>
-          <input
-            className={styles.updateImage}
-            type="file"
-            accept="image/*"
-            onBlur={() => setInputFocusedScreenShots(false)}
-            onChange={handleScreenImageChange}
-            id="imagePicker"
-            style={{ display: "flex", marginLeft:"20%" }}
-            multiple
-          />
-          {/* <text className={styles.uploadImage}>
-                    {<routeIcons.addImage />}
-                  </text> */}
-          <label htmlFor="imagePicker">
-            <div>
-              {newVideoGame.screenShots.length > 0 ? (
-                newVideoGame.screenShots.map((imageUrl, index) => (
-                  <div
-                    key={index}
-                    className={styles["image-container"]} // Aplica la clase CSS que oscurece la imagen en el hover
-                    onMouseEnter={() => setHoveredImage(imageUrl)}
-                    onMouseLeave={() => setHoveredImage(null)}
-                  >
-                    <img
-                      src={imageUrl}
-                      alt={`Selected ${index}`}
-                      className={styles.imageLoad}
-                    />
-
-                    {hoveredImage === imageUrl && (
-                      <div>
-                        <button
-                          className={styles["delete-button"]}
-                          type="button"
-                          onClick={() => deleteScreen(imageUrl)}
-                        >
-                          {<routeIcons.delete />}
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                ))
-              ) : (
+              <div className={styles.input1}>
+                <h2>Release date</h2>
                 <div>
-                  <text className={styles.uploadImage}>
-                    {<routeIcons.addImage />}
-                  </text>
+                  <input
+                    className={styles.inputSmall}
+                    type="date"
+                    onBlur={() => setInputFocusedDate(false)}
+                    value={date}
+                    onChange={(e) => handleDateChange(e.target.value)}
+                    placeholder="Select a date"
+                    max={today}
+                  />
                 </div>
-              )}
+                {validateNvg.releaseDate !== "" && !inputFocusedDate && (
+                  <div className={styles.errorMessage}>
+                    {validateNvg.releaseDate}
+                  </div>
+                )}
+              </div>
             </div>
 
-        <text className={styles.message}>
-          Hold ctrl to select multiple images
-                    {validateNvg.screenShots !== "" && !inputFocusedScreenShots && (
-                      <div className={styles.errorMessage}>{validateNvg.screenShots}</div>
-                    )}
-        </text>
-          </label>
+            <div className={styles.containerTextArea}>
+              <div>
+                <h2>Description</h2>
+                <textarea
+                  className={styles.textarea}
+                  placeholder="Paste_description"
+                  onBlur={() => setInputFocusedDesc(false)}
+                  value={newVideoGame.description}
+                  onChange={(e) => handleTextChange2(e.target.value)}
+                />
+                {validateNvg.description !== "" && !inputFocusedDesc && (
+                  <div className={styles.errorMessage}>
+                    {validateNvg.description}
+                  </div>
+                )}
+              </div>
+              <div>
+                <h2>System Requeriments</h2>
+                <textarea
+                  className={styles.textarea}
+                  placeholder="Paste_requeriments"
+                  onBlur={() => setInputFocusedrequeriments_en(false)}
+                  value={newVideoGame.requeriments_en}
+                  onChange={(e) => handleTextChange(e.target.value)}
+                />
+                {validateNvg.requeriments_en !== "" &&
+                  !inputFocusedrequeriments_en && (
+                    <div className={styles.errorMessage}>
+                      {validateNvg.requeriments_en}
+                    </div>
+                  )}
+              </div>
+            </div>
+            <div className={styles.generesAndPlatforms}>
+              <div className={styles.genre}>
+                <h2>Select genre</h2>
+
+                <select
+                  className={styles.select}
+                  onChange={(e) => pushItemgenre(e.target.value)}
+                >
+                  <option value="" disabled selected>
+                    Add genre
+                  </option>
+                  {stackData.genre.map((genre) => (
+                    <option key={genre} value={genre}>
+                      {genre}
+                    </option>
+                  ))}
+                </select>
+
+                <div className={styles.containerSelect}>
+                  <select
+                    className={styles.select}
+                    onChange={(e) => removeItemgenre(e.target.value)}
+                  >
+                    <option value="" disabled selected>
+                      Remove genre
+                    </option>
+                    {newVideoGame.genre.map((genre) => (
+                      <option key={genre} value={genre}>
+                        {genre}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {validateNvg.genre !== "" && !validateSubmit && (
+                  <div className={styles.errorMessage}>{validateNvg.genre}</div>
+                )}
+              </div>
+
+              <div>
+                <h2>Select platform</h2>
+                <div className={styles.genre}>
+                  <select
+                    className={styles.select}
+                    onChange={(e) => pushItemplatforms(e.target.value)}
+                  >
+                    <option value="" disabled selected>
+                      Add platforms
+                    </option>
+                    {stackData.platforms.map((platform) => (
+                      <option key={platform} value={platform}>
+                        {platform}
+                      </option>
+                    ))}
+                  </select>
+
+                  <div className={styles.containerSelect}>
+                    <select
+                      className={styles.select}
+                      onChange={(e) => removeItemplatforms(e.target.value)}
+                    >
+                      <option value="" disabled selected>
+                        Remove platforms
+                      </option>
+                      {newVideoGame.platforms.map((platform) => (
+                        <option key={platform} value={platform}>
+                          {platform}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                {validateNvg.platforms !== "" && !validateSubmit && (
+                  <div className={styles.errorMessage}>
+                    {validateNvg.platforms}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={styles.buttonContainer}>
+              <button
+                className={styles.buttonLoadGame}
+                onClick={() =>
+                  SubmitGame(
+                    event,
+                    newVideoGame,
+                    setNewVideoGame,
+                    validateSubmit,
+                    setValidateSubmit,
+                    date,
+                    token
+                  )
+                }
+              >
+                Load videogame
+              </button>
+              <button className={styles.cancel} onClick={CancelSubmit}>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
-      
-      </div>
-
-
-
-      <div className={styles.buttonContainer}>
-        <button
-          className={styles.buttonLoadGame}
-          onClick={() =>
-            SubmitGame(
-              event,
-              newVideoGame,
-              setNewVideoGame,
-              validateSubmit,
-              setValidateSubmit,
-              date,
-              token
-            )
-          }
-        >
-          Load videogame
-        </button>
-        <button className={styles.cancel} onClick={CancelSubmit}>
-          Cancel
-        </button>
-      </div>
       </div>
     </form>
   );

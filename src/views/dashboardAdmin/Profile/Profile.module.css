@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   width: 70%;
-  height: 100%;
+  height:30rem;
   align-items: center; /* Centra verticalmente el contenido */
   justify-content: center; /* Centra horizontalmente el contenido */
   color: white;
@@ -32,6 +32,8 @@
   }
 
   .imageContainer{
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-left: auto;
     width: 40%;
@@ -40,6 +42,7 @@
   .imageLoaded{
   
     margin-top: auto;
+
     border-radius: 100%;
     width: 200px;
     height: 200px;
@@ -59,6 +62,7 @@
   background-color: #fff;
   margin-left: auto;
   width: 60%;
+  height: 26rem;
 }
 
 .allinputsContainer{
@@ -71,14 +75,24 @@
   position: relative;
   width: 25rem;
   height: 100%;
+  margin-bottom: 1rem;
 }
 .inputWithIcon {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 100%;
 }
 /* Estilos para los campos de entrada (inputs) */
+
+.imageandpencil{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
 
 .input{
   width: 100%;
@@ -122,20 +136,28 @@
 }
 
 
-.editIcon { 
-  margin-left: -30px; /* Alinea el ícono a la izquierda del campo de entrada */
-  margin-right: 5px; /* Añade margen derecho para separar el ícono del texto */
-  color: #3F16A7;
-  cursor: pointer;
-}
+
 
 .crossIcon{
   color: #595959;
   position: absolute;
   right: 10px;
-  top: 60%;
+  top: 20%;
   
   cursor: pointer;
+}
+
+.crossIconimage{
+  font-size: ;
+  position: absolute;
+  right: 10px;
+  top:75%;
+  background-color: #622EDA;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  padding: 15px;
+  
 }
 
 .inputContainer{

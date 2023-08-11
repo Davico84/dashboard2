@@ -93,20 +93,18 @@ const Profile = () => {
       showAlert(
         "Data Update!",
         "Your information has been updated",
-        'routeIcons.confirm',
+        "routeIcons.confirm",
         "Ok",
-        dispatch(checkLogedUser()))
-      
-
+        dispatch(checkLogedUser())
+      );
     } catch (error) {
       showAlert(
         "Something went wrong",
         error.response.data.message,
-        'routeIcons.cancel',
+        "routeIcons.cancel",
         "Ok",
-        console.log("Error:", error.response.data.message),      
+        console.log("Error:", error.response.data.message)
       );
-
     }
   };
 
@@ -153,10 +151,10 @@ const Profile = () => {
             style={{ display: "none" }} // Cambia "flex" por "none" para ocultar el input por defecto
             id="imagePicker"
           />
-
           <label htmlFor="imagePicker">
-            <div>
+            <div className={styles.imageandpencil}>
               <img src={image} alt="Selected" className={styles.imageLoaded} />
+              <FontAwesomeIcon icon={faPencil} className={styles.crossIconimage} />
             </div>
           </label>
         </div>
@@ -249,9 +247,9 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                      {errors.pass && touched.pass && (
-                        <span className={styles.error}>{errors.pass}</span>
-                      )}
+                  {errors.pass && touched.pass && (
+                    <span className={styles.error}>{errors.pass}</span>
+                  )}
 
                   <div className={styles.inputContainer}>
                     <div className={styles.inputWithIcon}>
@@ -269,9 +267,9 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                      {errors.fullname && touched.fullname && (
-                        <span className={styles.error}>{errors.fullname}</span>
-                      )}
+                  {errors.fullname && touched.fullname && (
+                    <span className={styles.error}>{errors.fullname}</span>
+                  )}
 
                   <div className={styles.inputContainer}>
                     <div className={styles.inputWithIcon}>
@@ -289,9 +287,9 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                      {errors.email && touched.email && (
-                        <span className={styles.error}>{errors.email}</span>
-                      )}
+                  {errors.email && touched.email && (
+                    <span className={styles.error}>{errors.email}</span>
+                  )}
 
                   <div className={styles.inputContainer}>
                     <div className={styles.inputWithIcon}>
@@ -325,9 +323,9 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                      {errors.phone && touched.phone && (
-                        <span className={styles.error}>{errors.phone}</span>
-                      )}
+                  {errors.phone && touched.phone && (
+                    <span className={styles.error}>{errors.phone}</span>
+                  )}
                   <button
                     className={styles.miniButton}
                     type="submit"

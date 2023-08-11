@@ -1,147 +1,147 @@
 .modalBackdrop {
-  position: absolute;
-  top: 350px;
-  left: 58%;
-  transform: translate(-50%, -50%);
-  width: 650px;
-  display: flex;
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  z-index: 1;
-}
-
-.modalContent {
-  width: 35%;
-  background: linear-gradient(to right, #1b063e, #622eda);
-  padding: 30px 25px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  text-align: center;
-  color: #fff;
-  height: 35rem;
-}
-
-.gameImage {
-  max-width: 100%;
-  height: auto;
-}
-.right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 65%;
-  height: 35rem;
-  background: #fff;
-  padding: 30px 25px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-left: 15.8rem;
-  margin-top: -28rem;
-  padding-right: 18rem;
-}
-
-.right .row {
-  display: absolute;
-  justify-content: space-between;
-  margin-left: 14rem;
-  margin-top: -3rem;
-}
-button {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  background-color: #622EDA;
-  color: #fff;
-  margin-top: 1rem; /* Añadir un margen superior a los botones */
+    position: absolute;
+    top: 350px;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    z-index: 1;
+  }
   
-}
-
-.successMessage {
-  background-color: #987bdc;
-  color: #fff;
-  padding: 1rem;
+  .modalContent {
+    width: 35%;
+    background: linear-gradient(to right, #1b063e, #622eda);
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    color: #fff;
+    height: 35rem;
+  }
+  
+  .gameImage {
+    max-width: 100%;
+    height: auto;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 35rem;
+    background: #fff;
+    padding: 30px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: 15.8rem;
+    margin-top: -33.5rem;
+    padding-right: 18rem;
+  }
+  
+  .right .row {
+    display: absolute;
+    justify-content: space-between;
+    margin-left: 14rem;
+    margin-top: -3rem;
+  }
+  button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: #622EDA;
+    color: #fff;
+    margin-top: 1rem; /* Añadir un margen superior a los botones */
+    
+  }
+  
+  .successMessage {
+    background-color: #987bdc;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -4rem;
+    margin-left: -0.7rem;
+  }
+  
+  .modalButtonsr{
+  margin-left: -1rem;
+  }
+  
+  .modalButtonsl{
+    margin-right: -1rem;
+  }
+  
+  
+  .deletedButton {
+    background-color: #28a745;
+    margin-right: 1rem;
+  
+  }
+  
+  .availableButton {
+    background-color: #dc3545;
+    margin-right: 1rem;
+  }
+  
+  .inputleft{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .descrip{
+    margin-top: 1rem;
+    margin-left: 17rem;
+   
+  }
+  
+  
+  .selectField {
+   margin-left: 3rem;
+   margin-bottom: 0.4rem;
+   text-align: center;
+   margin-top: 1rem;
+  
+    width: 24rem; /* Asegura que los elementos select tengan el mismo ancho */
+  }
+  
+  .option{
+  margin-left: 3rem;
+  margin-bottom: 0.4rem;
   text-align: center;
-  border-radius: 0.25rem;
   margin-top: 1rem;
-}
-
-.modalButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: -4rem;
-  margin-left: -0.7rem;
-}
-
-.modalButtonsr{
-margin-left: -1rem;
-}
-
-.modalButtonsl{
-  margin-right: -1rem;
-}
-
-
-.deletedButton {
-  background-color: #28a745;
-  margin-right: 1rem;
-
-}
-
-.availableButton {
-  background-color: #dc3545;
-  margin-right: 1rem;
-}
-
-.inputleft{
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-}
-
-.descrip{
-  margin-top: 1rem;
-  margin-left: 17rem;
- 
-}
-
-
-.selectField {
- margin-left: 3rem;
- margin-bottom: 0.4rem;
- text-align: center;
- margin-top: 1rem;
-
-  width: 24rem; /* Asegura que los elementos select tengan el mismo ancho */
-}
-
-.option{
-margin-left: 3rem;
-margin-bottom: 0.4rem;
-text-align: center;
-margin-top: 1rem;
-
-  width: 24rem; /* Asegura que los elementos select tengan el mismo ancho */
-
-}
-
-.patgenbot{
-  margin-left: 3rem;
-  justify-content: space-between;
-margin-bottom: 0.5rem;
-}
-.titulop{
-  color: #1b063e;
-  font-weight: bold;
-  margin-left: 3rem;
-}
-.titulog{
-  color: #1b063e;
-  font-weight: bold;
-  margin-left: 2.5rem;
-}
-.titulod{
-  color: #1b063e;
-  font-weight: bold;
-  margin-left: -0.5rem;
-}
+  
+    width: 24rem; /* Asegura que los elementos select tengan el mismo ancho */
+  
+  }
+  
+  .patgenbot{
+    margin-left: 3rem;
+    justify-content: space-between;
+  margin-bottom: 0.5rem;
+  }
+  .titulop{
+    color: #1b063e;
+    font-weight: bold;
+    margin-left: 3rem;
+  }
+  .titulog{
+    color: #1b063e;
+    font-weight: bold;
+    margin-left: 2.5rem;
+  }
+  .titulod{
+    color: #1b063e;
+    font-weight: bold;
+    margin-left: -0.5rem;
+  }
